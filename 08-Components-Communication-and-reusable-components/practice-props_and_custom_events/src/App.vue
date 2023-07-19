@@ -5,11 +5,11 @@
       <active-user
         v-for="user in activeUsers"
         :key="user.username"
-        :user-name="user.username"
+        :userName="user.username"
         :age="user.age"
       ></active-user>
     </ul>
-    <user-data @addUser="addUser"></user-data>
+    <user-data @add-user="addUser"></user-data>
   </seciont>
 </template>
 
@@ -54,6 +54,14 @@ html {
 body {
   margin: 0;
 }
+
+section {
+  margin: 2rem auto;
+  max-width: 40rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
 header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 3rem auto;

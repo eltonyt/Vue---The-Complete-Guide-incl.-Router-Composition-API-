@@ -6,7 +6,7 @@ import UserData from "./components/UserData.vue"
 
 const app = createApp(App);
 
-app.component('active-User', ActiveUser);
+app.component('active-user', ActiveUser);
 app.component('user-data', UserData);
 
 app.mount("#app");

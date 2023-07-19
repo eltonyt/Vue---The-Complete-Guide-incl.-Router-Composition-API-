@@ -1,11 +1,7 @@
 <template>
   <section>
-    <div>
-      <strong>UserName: </strong> {{ userName }}
-      <strong>Age: </strong>
-      {{ age }}
-      <button @click="edit">Edit</button>
-    </div>
+    <h2>{{ userName }}</h2>
+    <h3>{{ age }}</h3>
   </section>
 </template>
 
@@ -21,10 +17,14 @@ export default {
       required: true,
     },
   },
-  methods: {
-    edit() {
-      this.$emit("edit-employee", this.userName);
-    }
-  }
 };
 </script>
+
+<style>
+section {
+  margin: 2rem auto;
+  max-width: 40rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+</style>
