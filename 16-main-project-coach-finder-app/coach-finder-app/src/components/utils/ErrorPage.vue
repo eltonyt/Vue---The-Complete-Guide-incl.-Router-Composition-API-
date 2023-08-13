@@ -1,3 +1,5 @@
 <template>
-    <p>Page Not Found.</p>
+    <section>
+        Page Not Found.
+    </section>
 </template>
