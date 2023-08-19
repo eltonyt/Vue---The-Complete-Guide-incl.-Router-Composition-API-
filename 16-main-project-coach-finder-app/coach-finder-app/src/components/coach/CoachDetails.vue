@@ -3,6 +3,9 @@
     <base-card>
       <h2>{{ fullName }}</h2>
       <h3>${{ rate }}/hour</h3>
+      <p>{{ description }}</p>
+      <base-badge v-for="area in areas" :key="area" :type="area" :title="area">
+      </base-badge>
     </base-card>
   </section>
   <section>
@@ -12,13 +15,6 @@
         <base-button link :to="contactLink">Contact</base-button>
       </header>
       <router-view></router-view>
-    </base-card>
-  </section>
-  <section>
-    <base-card>
-      <p>{{ description }}</p>
-      <base-badge v-for="area in areas" :key="area" :type="area" :title="area">
-      </base-badge>
     </base-card>
   </section>
 </template>

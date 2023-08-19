@@ -96,17 +96,18 @@ export default {
         this.formIsValid = false;
         this.areas.isValid = false;
       }
+      return this.formIsValid;
     },
     submitForm() {
       if (!this.validateForm()) {
         return;
       }
       const formData = {
-        first: this.firstName,
-        last: this.lastName,
-        desc: this.description,
-        rate: this.rate,
-        areas: this.areas,
+        first: this.firstName.val,
+        last: this.lastName.val,
+        desc: this.description.val,
+        rate: this.rate.val,
+        areas: this.areas.val,
       };
       console.log(formData);
       this.$emit("save-data", formData);
