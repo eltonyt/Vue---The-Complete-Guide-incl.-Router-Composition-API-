@@ -21,6 +21,8 @@ export default {
     const responseData = await response.json();
 
     if (!responseData.ok) {
+      const error = new Error(responseData.message || "failed to fetch!");
+      throw error;
       // error ...
     }
 
@@ -29,10 +31,12 @@ export default {
       id: userId,
     });
   },
-  
+
   async loadCoaches(context) {
     const userId = context.rootGetters.userId;
-    const response = await fetch(`https://coachfinder-8e964-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json`);
+    const response = await fetch(
+      `https://coachfinder-8e964-default-rtdb.europe-west1.firebasedatabase.app/coaches/${userId}.json`
+    );
     const responseData = await response.json();
     if (!response.ok) {
       // ...
@@ -46,9 +50,9 @@ export default {
         areas: responseData[key].areas,
         description: responseData[key].description,
         hourlyRate: responseData[key].hourlyRate,
-      }
+      };
       coaches.push(coach);
     }
-    context.commit('setCoaches', coaches);
+    context.commit("setCoaches", coaches);
   },
 };
